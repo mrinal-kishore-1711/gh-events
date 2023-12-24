@@ -3,7 +3,18 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - master
+      - 'develop-*' # develop-new or develop-callback-function
+      - 'feat/**' # feat/new or feat/new/button
   workflow_dispatch:
+  push:
+    branches:
+      - master
+      - 'develop-*' # develop-new or develop-callback-function
+      - 'feat/**' # feat/new or feat/new/button
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   deploy:
